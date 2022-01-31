@@ -247,4 +247,6 @@ app.layout = html.Div([
 
 if __name__ == "__main__":
     #app.run_server(debug=True)
+    import os
+    print(os.getcwd())
     app.run_server()
