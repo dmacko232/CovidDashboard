@@ -18,6 +18,12 @@ COVID_COLUMNS = [
 ]
 
 def prepare_covid_data(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Prepares covid data.
+    
+    Specifically
+        fill missing values for new stats with 0s, fill cumulative stats w previous val
+    """
     
     df = df[df["continent"] == CONTINENT][COVID_COLUMNS].copy()
     df.sort_values(by=["location", "date"], inplace=True)
